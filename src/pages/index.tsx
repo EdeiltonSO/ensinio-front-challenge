@@ -19,8 +19,36 @@ import iconPlaylists from '../assets/icons/second-section/icon-playlists.svg'
 import iconFolder from '../assets/icons/second-section/icon-folder.svg'
 import rocket from '../assets/icons/second-section/rocket.svg'
 import rightArrow from '../assets/icons/second-section/right-arrow.svg'
+import { useEffect, useState } from "react";
+import api from "@/services/api";
+import ArticleBox from "@/components/ArticleBox";
+
+interface Polyglot {
+  pt: string;
+  en: string;
+  es: string;
+}
+
+interface ArticleData {
+  id: number;
+  title: Polyglot;
+  description: Polyglot;
+}
 
 export default function Home() {
+  const [items, setItems] = useState<ArticleData[]>([]);
+  // const [lang, setLang] = useState('pt');
+
+  useEffect(() => {
+    try {
+      api.get('/items').then(response => {
+        setItems(response.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   return (
     <>
       <Head>
@@ -52,7 +80,7 @@ export default function Home() {
           </section>
           <section className="persona">
             <Image src={personaBackground} width={658} height={483} alt="" />
-            <Image className="personaImage" src={persona} width={529} height={533} alt="" />
+            <Image className="personaImage" src={persona} width={529} height={533} alt="Homem sorri enquanto olha em direção a você. Ele está segurando um tablet, usa óculos, tem pele escura, barba baixa e veste uma camisa social azul." />
           </section>
         </MainContent>
       </MainContainer>
@@ -69,21 +97,21 @@ export default function Home() {
 
           <h2>Queremos que o aluno se sinta confortável enquanto aprende</h2>
           <section>
-            <article>
-              <Image src={iconTracks} width={40} height={40} alt="" />
-              <strong>Trilhas de etapas</strong>
-              <p>Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar.</p>
-            </article>
-            <article>
-              <Image src={iconPlaylists} width={40} height={40} alt="" />
-              <strong>Playlists</strong>
-              <p>Transforme uma coleção em uma playlist para poder ver vídeos e áudios em sequência offline.</p>
-            </article>
-            <article>
-              <Image src={iconFolder} width={40} height={40} alt="" />
-              <strong>Coleções</strong>
-              <p>Crie coleções, adicione conteúdos, reorganize ítens e deixe tudo do seu jeito para melhorar a experiência.</p>
-            </article>
+            <ArticleBox 
+              iconSrc={iconTracks} 
+              title={items[0].title.pt}
+              description={items[0].description.pt}
+            />
+            <ArticleBox
+              iconSrc={iconPlaylists}
+              title={items[1].title.pt}
+              description={items[1].description.pt}
+            />
+            <ArticleBox
+              iconSrc={iconFolder}
+              title={items[2].title.pt}
+              description={items[2].description.pt}
+            />
           </section>
           <footer>
             <div className="leftSide">

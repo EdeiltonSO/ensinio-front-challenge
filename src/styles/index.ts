@@ -158,6 +158,7 @@ export const DetailsContent = styled.main`
             font-size: 1rem;
             line-height: 1.5rem;
             color: ${(props) => props.theme['neutral-200']};
+            transition: 0.2s;
 
             &:hover {
                 opacity: 75%;
@@ -233,6 +234,7 @@ export const DetailsContent = styled.main`
                 line-height: 20px;
                 text-decoration: none;
                 color: ${(props) => props.theme['purple-pure']};
+                transition: 0.2s;
                 
                 display: flex;
                 align-items: center;
