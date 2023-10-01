@@ -1,9 +1,12 @@
 export const mainTheme = {
     'white': '#FFFFFF',
-    'transparent-black': 'rgba(0,0,0,0.03)',
 
     'purple': '#5F41D9',
     'teal': '#41B5D9',
+
+    'black-transparent': 'rgba(0,0,0, 0.03)',
+    'purple-transparent': 'rgba(95, 65, 217, 0.3)',
+    'teal-transparent': 'rgba(65, 181, 217, 0.3)',
         
     'neutral-100': '#130C25',
     'neutral-200': '#423D51',

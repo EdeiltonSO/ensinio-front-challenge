@@ -1,14 +1,4 @@
-import { styled } from 'styled-components'
-
-export const Navbar = styled.div`
-    width: 100vw;
-    height: 5.5rem;
-    color: ${(props) => props.theme['white']};
-    background: rgba(0,0,0,0.03);
-    position: fixed;
-    backdrop-filter: blur(10px);
-    z-index: 1;
-`;
+import { styled } from 'styled-components';
 
 export const MainContainer = styled.div`
     width: 100vw;
@@ -55,7 +45,6 @@ export const MainContent = styled.main`
     max-width: 76rem;
     width: 100%;
     height: 100%;
-    //background: rgba(0,0,0,0.5);
     margin: 0 auto;
     padding-top: 5.5rem;
     display: flex;
@@ -66,7 +55,6 @@ export const MainContent = styled.main`
     .text {
         max-width: 100%;
         height: fit-content;
-        //background-color: rgba(255, 0, 0, 0.3);
         
         span {
             display: flex;
@@ -107,7 +95,6 @@ export const MainContent = styled.main`
     .persona {
         width: fit-content;
         height: 100%;
-        //background-color: rgba(255, 0, 0, 0.3);
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -121,42 +108,7 @@ export const MainContent = styled.main`
     }
 `;
 
-export const PrimaryButton = styled.button`
-    padding: 18px 32px;
-    border: none;
-    border-radius: 80px;
-    background-color: ${(props) => props.theme['teal-pure']};
-    color: ${(props) => props.theme['neutral-100']};
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.25rem;
-    cursor: pointer;
-    transition: 0.2s;
-
-    &:hover {
-        background-color: ${(props) => props.theme['teal-light']};
-    }
-`;
-
-export const SecondaryButton = styled.button`
-    display: flex;
-    align-items: center;
-    border: none;
-    background-color: transparent;
-    color: ${(props) => props.theme['white']};
-    font-weight: 600;
-    font-size: 1rem;
-    line-height: 1.25rem;
-    cursor: pointer;
-    transition: 0.2s;
-    gap: 0.5rem;
-
-    &:hover {
-        opacity: 75%;
-    }
-`;
-
 export const DetailsContainer = styled.div`
     width: 100vw;
-    height: 500px;
+    height: 800px;
 `;

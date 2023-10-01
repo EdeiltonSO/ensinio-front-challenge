@@ -1,13 +1,17 @@
-import { DetailsContainer, MainContainer, MainContent, Navbar, PrimaryButton, SecondaryButton } from "@/styles";
-import Image from 'next/image'
+import { DetailsContainer, MainContainer, MainContent } from "@/styles";
+import Image from 'next/image';
 
-import personaBackground from '../assets/persona-background.svg'
-import persona from '../assets/persona.png'
-import devices from '../assets/icons/main-section/devices.svg'
-import play from '../assets/icons/main-section/play.svg'
-import playlists from '../assets/icons/main-section/playlists.svg'
-import certified from '../assets/icons/main-section/certified.svg'
-import transcription from '../assets/icons/main-section/transcription.svg'
+import Navbar from "@/components/Navbar";
+import SecondaryButton from "@/components/SecondaryButton";
+import PrimaryButton from "@/components/PrimaryButton";
+
+import personaBackground from '../assets/persona-background.svg';
+import persona from '../assets/persona.png';
+import devices from '../assets/icons/main-section/devices.svg';
+import play from '../assets/icons/main-section/play.svg';
+import playlists from '../assets/icons/main-section/playlists.svg';
+import certified from '../assets/icons/main-section/certified.svg';
+import transcription from '../assets/icons/main-section/transcription.svg';
 
 export default function Home() {
   return (
