@@ -1,40 +1,79 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Essa é resposta do desafio técnico da Ensinio para a vaga de estágio em desenvolvimento front-end.
 
-## Getting Started
+O projeto foi feito em Next.js.
 
-First, run the development server:
+## Como executar?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+0. Instale o Node;
+1. Faça clone/download e entre na pasta do projeto;
+2. Execute `npm i`;
+3. ~~Execute `npx json-server db.json -p 3333`;~~
+4. Execute `npm run dev`;
+5. Acesse a aplicação na porta 3000;
+
+O projeto também está disponível [neste endereço](https://ensinio-front-challenge.vercel.app/).
+
+## Por que usar essa estrutura?
+
+Busquei misturar o que já conhecia do React com o que aprendi sobre Next.js. O uso da pasta `src` é padrão nos meus projetos para manter a organização dos arquivos e também é uma das possibilidades dadas pelo Next já durante o init. 
+
+Além disso, considerando o planejamento de escalar o projeto, escolhi manter a página inicial dentro da pasta `src/pages` para futuramente utilizar o [sistema de roteamento de páginas](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts) do Next.js.
+
+Escolhi criar diretórios específicos também para a configuração da API (nesse caso, com o Axios) e para os arquivos de idiomas.
+
+## Sugestão sobre os arquivos de idiomas
+
+Em relação aos idiomas, acredito que uma ideia mais escalável seria manter texto de diferentes idiomas em arquivos distintos — diferente do que acontece com o arquivo `db.json`, que mantém vários idiomas na mesma estrutura. 
+
+Isso porque, ao expandir para novos países — e provavelmente com um site maior —, é mais fácil delegar a tarefa de tradução sem que haja risco de idiomas já implementados serem afetados no processo. Um exemplo disso é o que fiz na pasta `src/strings`.
+
+## Quais problemas existem hoje?
+
+### Fonte Degular
+
+A fonte Degular está disponível no Adobe Fonts, mas é paga. A alternativa escolhida foi a de manter a fonte Inter no projeto inteiro e debater possíveis soluções com a equipe de design.
+
+### Barra de navegação
+
+O design da barra de navegação seguiu fielmente a especificação do Figma, mas quando o conteúdo atrás dela deixa de ser a primeira seção (que tem background gradiente), fica impossível ler o texto nela. 
+
+Isso porque a seção seguinte tem fundo branco, assim como a cor do texto.
+
+A sugestão é fazer leves alterações na cor de fundo da barra, mantendo o efeito translúcido e o blur, mas com uma cor que ajude na leitura do texto nesses casos específicos.
+
+## O que não foi implementado?
+
+- Menus dropdown;
+- Responsividade;
+- Dados dinâmicos com `json-server`;
+- Internacionalização;
+- Persistência do idioma;
+- Testes unitários;
+
+## Por que essas implementações não foram feitas?
+
+Quando recebi o desafio técnico, eu ainda não tinha estudado Next.js. Sendo uma preferência da empresa, resolvi adiantar (estava previso para ser o módulo seguinte no curso que estou fazendo). Isso reduziu meu prazo pra implementar.
+
+### Testes unitários
+
+Pretendia relembrar meu conhecimento de testes unitários para implementar no projeto, mas como é um requisito extra, deixei por último na lista.
+
+### Persistência do idioma
+
+Sobre a persistência do idioma, minha ideia era usar localStorage (que inclusive já implementei em projetos anteriores), mas essa função só seria implementada após a internacionalização.
+
+### Internacionalização
+
+Nunca trabalhei com internacionalização, mas pretendia utilizar i18n, até por conta da integração fácil com o Next.js. Cheguei a criar os arquivos de tradução — que estão disponíveis em `src/strings` — mas não tive tempo para me dedicar à implemntação por conta de erros com o menu dropdown e o famoso retorno `undefined` no map dos dados dinâmicos.
+
+### Menus dropdown
+
+Eu não fazia um menu dropdown há anos e acredito que subestimei a dificuldade de implementar um. Fiquei em dúvida entre utilizar RadixUI ou fazer só com HTML e CSS, escolhi a segunda alternativa e enfrentei alguns problemas que me fizeram perder muito tempo ao tentar deixar os submenus alinhados.
+
+### Responsividade
+
+Considerando todos esses problemas, a responsividade acabou ficando para depois. Apesar de ser algo que eu sei fazer, a implementação levaria mais tempo do que já me restava.
+
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Em caso de resposta positiva ou não, agradeço pela oportunidade de participar do processo e sigo interessado em futuras oportunidades com a Ensinio!
+```
