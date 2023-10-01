@@ -1,5 +1,6 @@
-import { DetailsContainer, MainContainer, MainContent } from "@/styles";
+import { DetailsContainer, DetailsContent, MainContainer, MainContent } from "@/styles";
 import Image from 'next/image';
+import Head from 'next/head';
 
 import Navbar from "@/components/Navbar";
 import SecondaryButton from "@/components/SecondaryButton";
@@ -13,9 +14,19 @@ import playlists from '../assets/icons/main-section/playlists.svg';
 import certified from '../assets/icons/main-section/certified.svg';
 import transcription from '../assets/icons/main-section/transcription.svg';
 
+import iconTracks from '../assets/icons/second-section/icon-tracks.svg'
+import iconPlaylists from '../assets/icons/second-section/icon-playlists.svg'
+import iconFolder from '../assets/icons/second-section/icon-folder.svg'
+import rocket from '../assets/icons/second-section/rocket.svg'
+import rightArrow from '../assets/icons/second-section/right-arrow.svg'
+
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>Ensinio | Página Inicial</title>
+      </Head>
+
       <Navbar />
       <MainContainer>
         <Image className="backgroundIcon playlist0" src={playlists} width={54} height={54} alt="" />
@@ -47,7 +58,46 @@ export default function Home() {
       </MainContainer>
   
       <DetailsContainer>
-        
+        <DetailsContent>
+          <div className="twoTextsContainer">
+            <div>
+              <hr />
+              <span>pensamos em cada detalhe</span>
+            </div>
+            <a href="#">Conheça alguns dos nossos recursos ⚡️</a>
+          </div>
+
+          <h2>Queremos que o aluno se sinta confortável enquanto aprende</h2>
+          <section>
+            <article>
+              <Image src={iconTracks} width={40} height={40} alt="" />
+              <strong>Trilhas de etapas</strong>
+              <p>Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar.</p>
+            </article>
+            <article>
+              <Image src={iconPlaylists} width={40} height={40} alt="" />
+              <strong>Playlists</strong>
+              <p>Transforme uma coleção em uma playlist para poder ver vídeos e áudios em sequência offline.</p>
+            </article>
+            <article>
+              <Image src={iconFolder} width={40} height={40} alt="" />
+              <strong>Coleções</strong>
+              <p>Crie coleções, adicione conteúdos, reorganize ítens e deixe tudo do seu jeito para melhorar a experiência.</p>
+            </article>
+          </section>
+          <footer>
+            <div className="leftSide">
+              <Image src={rocket} width={32} height={32} alt="" />
+              <span>Veja todos os outros recursos disponíveis para te ajudar</span>
+            </div>
+            <div className="rightSide">
+              <a href="#">
+                Ver mais
+                <Image src={rightArrow} width={32} height={24} alt="" />
+              </a>
+            </div>
+          </footer>
+        </DetailsContent>
       </DetailsContainer>
     </>
   )
