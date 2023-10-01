@@ -15,6 +15,10 @@ export const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
     }
 
+    img {
+        user-select: none;
+    }
+
     body, input, textarea, button {
         font: 400 1rem Inter, sans-serif;
     }

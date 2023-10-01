@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 export const Container = styled.div`
     width: 100vw;
     height: 5.5rem;
-    background: ${(props) => props.theme['black-transparent']};
+    background: rgba(0,0,0, 0.03);
     position: fixed;
     backdrop-filter: blur(15px);
     z-index: 1;
