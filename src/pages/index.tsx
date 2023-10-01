@@ -99,18 +99,18 @@ export default function Home() {
           <section>
             <ArticleBox 
               iconSrc={iconTracks} 
-              title={items[0].title.pt}
-              description={items[0].description.pt}
+              title="Trilhas de etapas"
+              description="Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar."
             />
             <ArticleBox
               iconSrc={iconPlaylists}
-              title={items[1].title.pt}
-              description={items[1].description.pt}
+              title="Playlists"
+              description="Transforme uma coleção em uma playlist para poder ver vídeos e áudios em sequência offline."
             />
             <ArticleBox
               iconSrc={iconFolder}
-              title={items[2].title.pt}
-              description={items[2].description.pt}
+              title="Coleções"
+              description="Crie coleções, adicione conteúdos, reorganize ítens e deixe tudo do seu jeito para melhorar a experiência."
             />
           </section>
           <footer>
