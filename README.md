@@ -7,8 +7,8 @@ O projeto foi feito em Next.js.
 0. Instale o Node;
 1. Faça clone/download e entre na pasta do projeto;
 2. Execute `npm i`;
-3. ~~Execute `npx json-server db.json -p 3333`;~~
-4. Execute `npm run dev`;
+3. Execute `npm run dev:server` em um segundo terminal;
+4. Execute `npm run dev` no primeiro terminal;
 5. Acesse a aplicação na porta 3000;
 
 O projeto também está disponível [neste endereço](https://ensinio-front-challenge.vercel.app/).
