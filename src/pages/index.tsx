@@ -20,7 +20,6 @@ import iconFolder from '../assets/icons/second-section/icon-folder.svg'
 import rocket from '../assets/icons/second-section/rocket.svg'
 import rightArrow from '../assets/icons/second-section/right-arrow.svg'
 import { useEffect, useState } from "react";
-import api from "@/services/api";
 import ArticleBox from "@/components/ArticleBox";
 
 interface Polyglot {
@@ -37,17 +36,16 @@ interface ArticleData {
 
 export default function Home() {
   const [items, setItems] = useState<ArticleData[]>([]);
-  // const [lang, setLang] = useState('pt');
-
+  
+  async function loadItems() {
+    const response = await fetch('http://localhost:3333/items');
+    const data = await response.json();
+    setItems(data);
+  }
+  
   useEffect(() => {
-    try {
-      api.get('/items').then(response => {
-        setItems(response.data);
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+    loadItems();
+  }, [])
 
   return (
     <>
@@ -56,6 +54,7 @@ export default function Home() {
       </Head>
 
       <Navbar />
+
       <MainContainer>
         <Image className="backgroundIcon playlist0" src={playlists} width={54} height={54} alt="" />
         <Image className="backgroundIcon transcription" src={transcription} width={53.95} height={53.95} alt="" />
@@ -97,21 +96,31 @@ export default function Home() {
 
           <h2>Queremos que o aluno se sinta confortável enquanto aprende</h2>
           <section>
-            <ArticleBox 
-              iconSrc={iconTracks} 
-              title="Trilhas de etapas"
-              description="Crie planos de estudos especificando aulas e/ou cursos e definindo a ordem que seus alunos devem estudar."
-            />
-            <ArticleBox
-              iconSrc={iconPlaylists}
-              title="Playlists"
-              description="Transforme uma coleção em uma playlist para poder ver vídeos e áudios em sequência offline."
-            />
-            <ArticleBox
-              iconSrc={iconFolder}
-              title="Coleções"
-              description="Crie coleções, adicione conteúdos, reorganize ítens e deixe tudo do seu jeito para melhorar a experiência."
-            />
+            {items.map(item => {
+              let icon;
+              switch (item.id) {
+                case 1:
+                  icon = iconTracks;
+                  break;
+                case 2:
+                  icon = iconPlaylists;
+                  break;
+                case 3:
+                  icon = iconFolder;
+                  break;
+                default:
+                  icon = iconFolder;
+                  break;
+              }
+              return (
+                <ArticleBox
+                  key={item.id}
+                  iconSrc={icon} 
+                  title={item.title.pt}
+                  description={item.description.pt}
+                />
+              )
+            })}
           </section>
           <footer>
             <div className="leftSide">

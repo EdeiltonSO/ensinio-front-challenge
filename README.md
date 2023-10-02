@@ -45,7 +45,6 @@ A sugestão é fazer leves alterações na cor de fundo da barra, mantendo o efe
 
 - Menus dropdown;
 - Responsividade;
-- Dados dinâmicos com `json-server`;
 - Internacionalização;
 - Persistência do idioma;
 - Testes unitários;
@@ -64,7 +63,7 @@ Sobre a persistência do idioma, minha ideia era usar localStorage (que inclusiv
 
 ### Internacionalização
 
-Nunca trabalhei com internacionalização, mas pretendia utilizar i18n, até por conta da integração fácil com o Next.js. Cheguei a criar os arquivos de tradução — que estão disponíveis em `src/strings` — mas não tive tempo para me dedicar à implemntação por conta de erros com o menu dropdown e o famoso retorno `undefined` no map dos dados dinâmicos.
+Nunca trabalhei com internacionalização, mas pretendia utilizar i18n, até por conta da integração fácil com o Next.js. Cheguei a criar os arquivos de tradução — que estão disponíveis em `src/strings` — mas não tive tempo para me dedicar à implementação por conta de erros com o menu dropdown e com os dados do vindos do `json-server` (já resolvidos).
 
 ### Menus dropdown
 
