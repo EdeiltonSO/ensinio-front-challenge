@@ -3,6 +3,7 @@ import { styled } from 'styled-components';
 export const MainContainer = styled.div`
     width: 100vw;
     max-height: 43.75rem;
+    min-height: 43.75rem;
     height: 100vh;
     color: ${(props) => props.theme['white']};
     background: linear-gradient(90deg, ${(props) => props.theme['purple-pure']} 0%, ${(props) => props.theme['teal-pure']} 100%);
