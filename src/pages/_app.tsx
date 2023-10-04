@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'styled-components';
 import { mainTheme } from '../styles/themes/main';
@@ -14,6 +14,15 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const [language, setLanguage] = useState(router.defaultLocale!);
 
+  
+  useEffect(() => {
+    const storedLanguage = localStorage.getItem(
+      '@ensinio-front-challenge:website-language-1.0.0'
+    )
+    
+    if (storedLanguage) setLanguage(storedLanguage);
+  }, [])
+
   const translations: any = {
     'pt-BR': ptPack,
     'en-US': enPack,
@@ -22,6 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
   
   function setCurrentLanguage(lang: string) {
     setLanguage(lang);
+    localStorage.setItem('@ensinio-front-challenge:website-language-1.0.0', lang)
   }
   const langPack = translations[language];
   

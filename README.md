@@ -45,7 +45,6 @@ A sugestão é fazer leves alterações na cor de fundo da barra, mantendo o efe
 
 - Menus dropdown;
 - Responsividade;
-- Persistência do idioma;
 - Testes unitários;
 
 ## Por que essas implementações não foram feitas?
@@ -55,10 +54,6 @@ Quando recebi o desafio técnico, eu ainda não tinha estudado Next.js. Sendo um
 ### Testes unitários
 
 Pretendia relembrar meu conhecimento de testes unitários para implementar no projeto, mas como é um requisito extra, deixei por último na lista.
-
-### Persistência do idioma
-
-Sobre a persistência do idioma, minha ideia era usar localStorage (que inclusive já implementei em projetos anteriores), mas essa função só seria implementada após a internacionalização.
 
 ### Menus dropdown
 

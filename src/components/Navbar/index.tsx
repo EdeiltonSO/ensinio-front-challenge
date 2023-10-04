@@ -12,6 +12,7 @@ import { LanguageContext } from '@/contexts/LanguageContext';
 export default function Navbar() {
     const { 
         langPack,
+        setCurrentLanguage
     } = useContext(LanguageContext)
 
     return (
@@ -33,7 +34,7 @@ export default function Navbar() {
                     </SecondaryButton>
                     <TertiaryButton>{langPack.startNow}</TertiaryButton>
                     
-                    <a href="#">PT<Image src={downTriangle} alt="" /></a>
+                    <a href='' onClick={() => setCurrentLanguage('en-US')}>PT<Image src={downTriangle} alt="" /></a>
                     {/* <ul className="dropdownLanguageSubmenu">
                         <li><a href="#">PT</a></li>
                         <li><a href="#">EN</a></li>

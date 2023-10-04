@@ -52,7 +52,6 @@ export default function Home() {
   
   useEffect(() => {
     loadItems();
-    setCurrentLanguage('en-US'); // mover pra botão na navbar
   }, [])
 
   return (
@@ -78,7 +77,9 @@ export default function Home() {
             <h1>{langPack.h1Main}</h1>
             <p>{langPack.descriptionMain}</p>
             <div>
-              <PrimaryButton>{langPack.CTAButton}</PrimaryButton>
+              <PrimaryButton>
+                {langPack.CTAButton}
+              </PrimaryButton>
               <SecondaryButton>
                 <Image src={play} width={32} height={32} alt="" />
                 {langPack.watchVideo}
