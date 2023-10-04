@@ -23,6 +23,7 @@ export const Content = styled.div`
     section {
         display: flex;
         gap: 2.5rem;
+        align-items: center;
 
         a {
             display: flex;
