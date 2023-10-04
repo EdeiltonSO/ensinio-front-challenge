@@ -45,7 +45,6 @@ A sugestão é fazer leves alterações na cor de fundo da barra, mantendo o efe
 
 - Menus dropdown;
 - Responsividade;
-- Internacionalização;
 - Persistência do idioma;
 - Testes unitários;
 
@@ -60,10 +59,6 @@ Pretendia relembrar meu conhecimento de testes unitários para implementar no pr
 ### Persistência do idioma
 
 Sobre a persistência do idioma, minha ideia era usar localStorage (que inclusive já implementei em projetos anteriores), mas essa função só seria implementada após a internacionalização.
-
-### Internacionalização
-
-Nunca trabalhei com internacionalização, mas pretendia utilizar i18n, até por conta da integração fácil com o Next.js. Cheguei a criar os arquivos de tradução — que estão disponíveis em `src/strings` — mas não tive tempo para me dedicar à implementação por conta de erros com o menu dropdown e com os dados do vindos do `json-server` (já resolvidos).
 
 ### Menus dropdown
 

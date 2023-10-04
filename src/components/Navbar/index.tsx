@@ -6,26 +6,32 @@ import downTriangle from '../../assets/icons/main-section/dropdownpolygon.svg'
 import userProfile from '../../assets/icons/main-section/userprofile.svg'
 import SecondaryButton from '../SecondaryButton';
 import TertiaryButton from '../TertiaryButton';
+import { useContext } from 'react';
+import { LanguageContext } from '@/contexts/LanguageContext';
 
 export default function Navbar() {
+    const { 
+        langPack,
+    } = useContext(LanguageContext)
+
     return (
       <Container>
             <Content>
                 <a href="#"><Image src={logoEnsinio} alt="" /></a>
                 <section>
-                    <a href="#">Soluções<Image src={downTriangle} alt="" /></a>
-                    <a href="#">Preços</a>
-                    <a href="#">Academy</a>
-                    <a href="#">Blog</a>
-                    <a href="#">Contato</a>
+                    <a href="#">{langPack.solutions}<Image src={downTriangle} alt="" /></a>
+                    <a href="#">{langPack.prices}</a>
+                    <a href="#">{langPack.academy}</a>
+                    <a href="#">{langPack.blog}</a>
+                    <a href="#">{langPack.contact}</a>
 
                     <VerticalSeparator />
 
                     <SecondaryButton>
                         <Image src={userProfile} alt="" />
-                        Entrar
+                        {langPack.enter}
                     </SecondaryButton>
-                    <TertiaryButton>Começar agora</TertiaryButton>
+                    <TertiaryButton>{langPack.startNow}</TertiaryButton>
                     
                     <a href="#">PT<Image src={downTriangle} alt="" /></a>
                     {/* <ul className="dropdownLanguageSubmenu">

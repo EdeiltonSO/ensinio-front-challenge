@@ -19,8 +19,9 @@ import iconPlaylists from '../assets/icons/second-section/icon-playlists.svg'
 import iconFolder from '../assets/icons/second-section/icon-folder.svg'
 import rocket from '../assets/icons/second-section/rocket.svg'
 import rightArrow from '../assets/icons/second-section/right-arrow.svg'
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import ArticleBox from "@/components/ArticleBox";
+import { LanguageContext } from "@/contexts/LanguageContext";
 
 interface Polyglot {
   pt: string;
@@ -36,6 +37,12 @@ interface ArticleData {
 
 export default function Home() {
   const [items, setItems] = useState<ArticleData[]>([]);
+
+  const { 
+    langPack,
+    language,
+    setCurrentLanguage
+  } = useContext(LanguageContext)
   
   async function loadItems() {
     const response = await fetch('http://localhost:3333/items');
@@ -45,12 +52,13 @@ export default function Home() {
   
   useEffect(() => {
     loadItems();
+    setCurrentLanguage('en-US'); // mover pra botão na navbar
   }, [])
 
   return (
     <>
       <Head>
-        <title>Ensinio | Página Inicial</title>
+        <title>{langPack.titlePage}</title>
       </Head>
 
       <Navbar />
@@ -65,21 +73,21 @@ export default function Home() {
           <section className="text">
             <span>
               <Image src={devices} width={24} height={24} alt="" />
-              <span>plataforma all in one</span>
+              <span>{langPack.platformAIO}</span>
             </span>
-            <h1>Sua escola online poderosa e lucrativa</h1>
-            <p>Tenha sua própria escola online 100% white label com rede social, gamificação, clube de assinaturas, ecommerce e sistema EAD completo.</p>
+            <h1>{langPack.h1Main}</h1>
+            <p>{langPack.descriptionMain}</p>
             <div>
-              <PrimaryButton>Começar agora</PrimaryButton>
+              <PrimaryButton>{langPack.CTAButton}</PrimaryButton>
               <SecondaryButton>
                 <Image src={play} width={32} height={32} alt="" />
-                Ver vídeo
+                {langPack.watchVideo}
               </SecondaryButton>
             </div>
           </section>
           <section className="persona">
             <Image src={personaBackground} width={658} height={483} alt="" />
-            <Image className="personaImage" src={persona} width={529} height={533} alt="Homem sorri enquanto olha em direção a você. Ele está segurando um tablet, usa óculos, tem pele escura, barba baixa e veste uma camisa social azul." />
+            <Image className="personaImage" src={persona} width={529} height={533} alt={langPack.descriptionPersona} />
           </section>
         </MainContent>
       </MainContainer>
@@ -89,12 +97,12 @@ export default function Home() {
           <div className="twoTextsContainer">
             <div>
               <hr />
-              <span>pensamos em cada detalhe</span>
+              <span>{langPack.detailsSpan}</span>
             </div>
-            <a href="#">Conheça alguns dos nossos recursos ⚡️</a>
+            <a href="#">{langPack.detailsAnchor} ⚡️</a>
           </div>
 
-          <h2>Queremos que o aluno se sinta confortável enquanto aprende</h2>
+          <h2>{langPack.detailsH2}</h2>
           <section>
             {items.map(item => {
               let icon;
@@ -109,15 +117,36 @@ export default function Home() {
                   icon = iconFolder;
                   break;
                 default:
-                  icon = iconFolder;
+                  icon = '';
                   break;
               }
+
+              let title, description;
+              switch (language) {
+                case 'pt-BR':
+                  title = item.title.pt;
+                  description = item.description.pt;
+                  break;
+                case 'en-US':
+                  title = item.title.en;
+                  description = item.description.en;
+                  break;
+                case 'es':
+                  title = item.title.es;
+                  description = item.description.es;
+                  break;
+                default:
+                  title = '';
+                  description = '';
+                  break;
+              }
+
               return (
                 <ArticleBox
                   key={item.id}
                   iconSrc={icon} 
-                  title={item.title.pt}
-                  description={item.description.pt}
+                  title={title}
+                  description={description}
                 />
               )
             })}
@@ -125,11 +154,11 @@ export default function Home() {
           <footer>
             <div className="leftSide">
               <Image src={rocket} width={32} height={32} alt="" />
-              <span>Veja todos os outros recursos disponíveis para te ajudar</span>
+              <span>{langPack.footerSpan}</span>
             </div>
             <div className="rightSide">
               <a href="#">
-                Ver mais
+              {langPack.footerAnchor}
                 <Image src={rightArrow} width={32} height={24} alt="" />
               </a>
             </div>
