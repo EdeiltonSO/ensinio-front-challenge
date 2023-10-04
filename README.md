@@ -41,6 +41,12 @@ Isso porque a seção seguinte tem fundo branco, assim como a cor do texto.
 
 A sugestão é fazer leves alterações na cor de fundo da barra, mantendo o efeito translúcido e o blur, mas com uma cor que ajude na leitura do texto nesses casos específicos.
 
+## Como a internacionalização está funcionando?
+
+Os arquivos com os três idiomas estão disponíveis em `src/strings` e a aplicação já os reconhece totalmente. O idioma que é inicialmemnte escolhido para o usuário vem do defaultLocale na configuração do Next, mas a aplocação já persiste a escolha do usuário com o localStorage. 
+
+A mudança de idioma, entretanto, depende do menu dropdown ainda não implementado. Assim, por enquanto o botão de idioma apenas muda a aplicação para inglês e salva essa mudança no localStorage.
+
 ## O que não foi implementado?
 
 - Menus dropdown;
