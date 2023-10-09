@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
     }
 
-    img {
+    img, button {
         user-select: none;
     }
 

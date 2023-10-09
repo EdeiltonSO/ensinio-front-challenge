@@ -11,7 +11,7 @@ O projeto foi feito em Next.js.
 4. Execute `npm run dev` no primeiro terminal;
 5. Acesse a aplicação na porta 3000;
 
-O projeto também está disponível [neste endereço](https://ensinio-front-challenge.vercel.app/).
+**Esta versão do projeto também está disponível [neste endereço](https://ensinio-front-challenge-git-feature-updates-edeiltonso-gmailcom.vercel.app/).**
 
 ## Por que usar essa estrutura?
 
@@ -41,12 +41,17 @@ Isso porque a seção seguinte tem fundo branco, assim como a cor do texto.
 
 A sugestão é fazer leves alterações na cor de fundo da barra, mantendo o efeito translúcido e o blur, mas com uma cor que ajude na leitura do texto nesses casos específicos.
 
+## Como a internacionalização está funcionando?
+
+Os arquivos com os três idiomas estão disponíveis em `src/strings` e a aplicação já os reconhece totalmente. O idioma que é inicialmemnte escolhido para o usuário vem do defaultLocale na configuração do Next, mas a aplocação já persiste a escolha do usuário com o localStorage. 
+
+A mudança de idioma, entretanto, depende do menu dropdown ainda não implementado. Assim, por enquanto o botão de idioma apenas muda a aplicação para inglês e salva essa mudança no localStorage.
+
 ## O que não foi implementado?
 
-- Menus dropdown;
+- Marcação do idioma ativo no dropdown de idiomas;
+- Menu dropdown de soluções;
 - Responsividade;
-- Internacionalização;
-- Persistência do idioma;
 - Testes unitários;
 
 ## Por que essas implementações não foram feitas?
@@ -57,22 +62,10 @@ Quando recebi o desafio técnico, eu ainda não tinha estudado Next.js. Sendo um
 
 Pretendia relembrar meu conhecimento de testes unitários para implementar no projeto, mas como é um requisito extra, deixei por último na lista.
 
-### Persistência do idioma
-
-Sobre a persistência do idioma, minha ideia era usar localStorage (que inclusive já implementei em projetos anteriores), mas essa função só seria implementada após a internacionalização.
-
-### Internacionalização
-
-Nunca trabalhei com internacionalização, mas pretendia utilizar i18n, até por conta da integração fácil com o Next.js. Cheguei a criar os arquivos de tradução — que estão disponíveis em `src/strings` — mas não tive tempo para me dedicar à implementação por conta de erros com o menu dropdown e com os dados do vindos do `json-server` (já resolvidos).
-
 ### Menus dropdown
 
-Eu não fazia um menu dropdown há anos e acredito que subestimei a dificuldade de implementar um. Fiquei em dúvida entre utilizar RadixUI ou fazer só com HTML e CSS, escolhi a segunda alternativa e enfrentei alguns problemas que me fizeram perder muito tempo ao tentar deixar os submenus alinhados.
+Eu não fazia um menu dropdown há anos e enfrentei alguns problemas que me fizeram perder muito tempo ao tentar deixar os submenus alinhados.
 
 ### Responsividade
 
 Considerando todos esses problemas, a responsividade acabou ficando para depois. Apesar de ser algo que eu sei fazer, a implementação levaria mais tempo do que já me restava.
-
-```
-Em caso de resposta positiva ou não, agradeço pela oportunidade de participar do processo e sigo interessado em futuras oportunidades com a Ensinio!
-```

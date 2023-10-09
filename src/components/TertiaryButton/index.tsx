@@ -1,13 +1,13 @@
-import { ReactNode } from "react"
+import { ButtonHTMLAttributes, ReactNode } from "react"
 import { Container } from "./styles";
 
-interface TertiaryButtonProps {
+interface TertiaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
 }
 
-export default function TertiaryButton({ children }: TertiaryButtonProps) {
+export default function TertiaryButton({ children, ...props }: TertiaryButtonProps) {
     return (
-        <Container>
+        <Container {...props}>
             {children}
         </Container>
     )
