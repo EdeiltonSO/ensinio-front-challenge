@@ -36,7 +36,7 @@ export const Content = styled.div`
             line-height: 15.75px;
             transition: 0.2s;
 
-            &:hover {
+            & > hover {
                 opacity: 75%;
             }
         }
