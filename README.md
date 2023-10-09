@@ -11,7 +11,7 @@ O projeto foi feito em Next.js.
 4. Execute `npm run dev` no primeiro terminal;
 5. Acesse a aplicação na porta 3000;
 
-O projeto também está disponível [neste endereço](https://ensinio-front-challenge.vercel.app/).
+**Esta versão do projeto também está disponível [neste endereço](https://ensinio-front-challenge-git-feature-updates-edeiltonso-gmailcom.vercel.app/).**
 
 ## Por que usar essa estrutura?
 
