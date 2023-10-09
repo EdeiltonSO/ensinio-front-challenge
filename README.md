@@ -49,7 +49,8 @@ A mudança de idioma, entretanto, depende do menu dropdown ainda não implementa
 
 ## O que não foi implementado?
 
-- Menus dropdown;
+- Marcação do idioma ativo no dropdown de idiomas;
+- Menu dropdown de soluções;
 - Responsividade;
 - Testes unitários;
 
@@ -63,12 +64,8 @@ Pretendia relembrar meu conhecimento de testes unitários para implementar no pr
 
 ### Menus dropdown
 
-Eu não fazia um menu dropdown há anos e acredito que subestimei a dificuldade de implementar um. Fiquei em dúvida entre utilizar RadixUI ou fazer só com HTML e CSS, escolhi a segunda alternativa e enfrentei alguns problemas que me fizeram perder muito tempo ao tentar deixar os submenus alinhados.
+Eu não fazia um menu dropdown há anos e enfrentei alguns problemas que me fizeram perder muito tempo ao tentar deixar os submenus alinhados.
 
 ### Responsividade
 
 Considerando todos esses problemas, a responsividade acabou ficando para depois. Apesar de ser algo que eu sei fazer, a implementação levaria mais tempo do que já me restava.
-
-```
-Em caso de resposta positiva ou não, agradeço pela oportunidade de participar do processo e sigo interessado em futuras oportunidades com a Ensinio!
-```
