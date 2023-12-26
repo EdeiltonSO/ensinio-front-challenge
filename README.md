@@ -41,38 +41,10 @@ Isso porque a seção seguinte tem fundo branco, assim como a cor do texto.
 
 A sugestão é fazer leves alterações na cor de fundo da barra, mantendo o efeito translúcido e o blur, mas com uma cor que ajude na leitura do texto nesses casos específicos.
 
-## O que não foi implementado?
+## O que falta ser implementado?
 
 - Menus dropdown;
 - Responsividade;
 - Internacionalização;
 - Persistência do idioma;
 - Testes unitários;
-
-## Por que essas implementações não foram feitas?
-
-Quando recebi o desafio técnico, eu ainda não tinha estudado Next.js. Sendo uma preferência da empresa, resolvi adiantar (estava previso para ser o módulo seguinte no curso que estou fazendo). Isso reduziu meu prazo pra implementar.
-
-### Testes unitários
-
-Pretendia relembrar meu conhecimento de testes unitários para implementar no projeto, mas como é um requisito extra, deixei por último na lista.
-
-### Persistência do idioma
-
-Sobre a persistência do idioma, minha ideia era usar localStorage (que inclusive já implementei em projetos anteriores), mas essa função só seria implementada após a internacionalização.
-
-### Internacionalização
-
-Nunca trabalhei com internacionalização, mas pretendia utilizar i18n, até por conta da integração fácil com o Next.js. Cheguei a criar os arquivos de tradução — que estão disponíveis em `src/strings` — mas não tive tempo para me dedicar à implementação por conta de erros com o menu dropdown e com os dados do vindos do `json-server` (já resolvidos).
-
-### Menus dropdown
-
-Eu não fazia um menu dropdown há anos e acredito que subestimei a dificuldade de implementar um. Fiquei em dúvida entre utilizar RadixUI ou fazer só com HTML e CSS, escolhi a segunda alternativa e enfrentei alguns problemas que me fizeram perder muito tempo ao tentar deixar os submenus alinhados.
-
-### Responsividade
-
-Considerando todos esses problemas, a responsividade acabou ficando para depois. Apesar de ser algo que eu sei fazer, a implementação levaria mais tempo do que já me restava.
-
-```
-Em caso de resposta positiva ou não, agradeço pela oportunidade de participar do processo e sigo interessado em futuras oportunidades com a Ensinio!
-```
