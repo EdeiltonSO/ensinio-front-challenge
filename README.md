@@ -47,25 +47,10 @@ Os arquivos com os três idiomas estão disponíveis em `src/strings` e a aplica
 
 A mudança de idioma, entretanto, depende do menu dropdown ainda não implementado. Assim, por enquanto o botão de idioma apenas muda a aplicação para inglês e salva essa mudança no localStorage.
 
-## O que não foi implementado?
+## O que falta ser implementado?
 
 - Marcação do idioma ativo no dropdown de idiomas;
 - Menu dropdown de soluções;
+- Menu dropdown de idiomas;
 - Responsividade;
 - Testes unitários;
-
-## Por que essas implementações não foram feitas?
-
-Quando recebi o desafio técnico, eu ainda não tinha estudado Next.js. Sendo uma preferência da empresa, resolvi adiantar (estava previso para ser o módulo seguinte no curso que estou fazendo). Isso reduziu meu prazo pra implementar.
-
-### Testes unitários
-
-Pretendia relembrar meu conhecimento de testes unitários para implementar no projeto, mas como é um requisito extra, deixei por último na lista.
-
-### Menus dropdown
-
-Eu não fazia um menu dropdown há anos e enfrentei alguns problemas que me fizeram perder muito tempo ao tentar deixar os submenus alinhados.
-
-### Responsividade
-
-Considerando todos esses problemas, a responsividade acabou ficando para depois. Apesar de ser algo que eu sei fazer, a implementação levaria mais tempo do que já me restava.
