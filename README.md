@@ -51,6 +51,5 @@ A mudança de idioma, entretanto, depende do menu dropdown ainda não implementa
 
 - Marcação do idioma ativo no dropdown de idiomas;
 - Menu dropdown de soluções;
-- Menu dropdown de idiomas;
 - Responsividade;
 - Testes unitários;
